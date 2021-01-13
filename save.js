@@ -1,6 +1,6 @@
 var request = require('request')
 var fs = require('fs')
-var path = require("path"); 
+var path = require("path");
 const docList = [
     [
         { topic: "Three", text: 'THREE.TextSprite', url: 'https://raw.githubusercontent.com/SeregPie/THREE.TextSprite/main/README.md' },
@@ -12,6 +12,11 @@ const docList = [
     [
 
     ]
+]
+
+const docnew = [
+    { topic: "GIS", text: 'awesome-gis', url: 'https://raw.githubusercontent.com/sshuair/awesome-gis/master/README.md' },
+
 ]
 
 let allList = [];
@@ -32,9 +37,9 @@ function mkdirsSync(dirname) {
     }
 }
 
-for (const doc of allList) {
+for (const doc of docnew) {
     const name = doc.url.slice(doc.url.lastIndexOf('/') + 1)
-    let dir = './' + doc.topic + "/" + doc.text  
+    let dir = './' + doc.topic + "/" + doc.text
     mkdirsSync(dir)
     request(doc.url).pipe(fs.createWriteStream(dir + "/" + name));
 }
