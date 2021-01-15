@@ -4,7 +4,7 @@ var path = require("path");
 const docList = [
     [
         { topic: "Three", text: 'THREE.TextSprite', url: 'https://raw.githubusercontent.com/SeregPie/THREE.TextSprite/main/README.md' },
-
+        { topic: "GIS", text: 'awesome-gis', url: 'https://raw.githubusercontent.com/sshuair/awesome-gis/master/README.md' },
     ],
     [
 
@@ -15,7 +15,7 @@ const docList = [
 ]
 
 const docnew = [
-    { topic: "GIS", text: 'awesome-gis', url: 'https://raw.githubusercontent.com/sshuair/awesome-gis/master/README.md' },
+    { topic: "Maptalks", text: 'maptalks.three', url: 'https://raw.githubusercontent.com/maptalks/maptalks.three/master/API.ZH-CN.md' },
 
 ]
 
