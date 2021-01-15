@@ -5,6 +5,8 @@ const docList = [
     [
         { topic: "Three", text: 'THREE.TextSprite', url: 'https://raw.githubusercontent.com/SeregPie/THREE.TextSprite/main/README.md' },
         { topic: "GIS", text: 'awesome-gis', url: 'https://raw.githubusercontent.com/sshuair/awesome-gis/master/README.md' },
+        { topic: "Maptalks", text: 'maptalks.three', url: 'https://raw.githubusercontent.com/maptalks/maptalks.three/master/API.ZH-CN.md' },
+        { topic: "webgl", text: 'GLSL-Card', url: 'https://raw.githubusercontent.com/wshxbqq/GLSL-Card/master/README.md' },
     ],
     [
 
@@ -14,9 +16,15 @@ const docList = [
     ]
 ]
 
-const docnew = [
-    { topic: "Maptalks", text: 'maptalks.three', url: 'https://raw.githubusercontent.com/maptalks/maptalks.three/master/API.ZH-CN.md' },
+const topics = {
+    webgl:"webgl",
+    Maptalks:"Maptalks",
+    GIS:"GIS",
+    Three:"Three"
+}
 
+const docnew = [
+    { topic: "webgl", text: 'GLSL-Card', url: 'https://raw.githubusercontent.com/wshxbqq/GLSL-Card/master/README.md' },
 ]
 
 let allList = [];
@@ -38,7 +46,8 @@ function mkdirsSync(dirname) {
 }
 
 for (const doc of docnew) {
-    const name = doc.url.slice(doc.url.lastIndexOf('/') + 1)
+    //const name = doc.url.slice(doc.url.lastIndexOf('/') + 1)
+    const name = "README.md"
     let dir = './' + doc.topic + "/" + doc.text
     mkdirsSync(dir)
     request(doc.url).pipe(fs.createWriteStream(dir + "/" + name));
