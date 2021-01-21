@@ -20,11 +20,12 @@ const topics = {
     webgl:"webgl",
     Maptalks:"Maptalks",
     GIS:"GIS",
-    Three:"Three"
+    Three:"Three",
+    Front:"Front"
 }
 
 const docnew = [
-    { topic: "webgl", text: 'GLSL-Card', url: 'https://raw.githubusercontent.com/wshxbqq/GLSL-Card/master/README.md' },
+    { topic: topics.Front, text: 'awesome-vue', url: 'https://raw.githubusercontent.com/vuejs/awesome-vue/master/README.md' },
 ]
 
 let allList = [];
@@ -52,3 +53,4 @@ for (const doc of docnew) {
     mkdirsSync(dir)
     request(doc.url).pipe(fs.createWriteStream(dir + "/" + name));
 }
+
